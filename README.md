@@ -1,2 +1,2 @@
-# qt_morphing_clock
+# Qt Morphing Clock
 A Qt-based interpretation of Harifun's morphing clock.
