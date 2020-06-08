@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>melex.jpg</file>
         <file>Digit.qml</file>
     </qresource>
 </RCC>

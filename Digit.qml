@@ -123,39 +123,120 @@ Item {
     states: [
         State {
             name: "0"
+            PropertyChanges {target: a; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: a; width: horiz_seg.len}
+            PropertyChanges {target: b; x: vert_seg.xcoord_right}
+            PropertyChanges {target: b; height: vert_seg.len}
+            PropertyChanges {target: c; x: vert_seg.xcoord_right}
+            PropertyChanges {target: c; height: vert_seg.len}
+            PropertyChanges {target: d; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: d; width: horiz_seg.len}
+            PropertyChanges {target: e; x: vert_seg.xcoord_left}
+            PropertyChanges {target: e; height: vert_seg.len}
+            PropertyChanges {target: f; x: vert_seg.xcoord_left}
+            PropertyChanges {target: f; height: vert_seg.len}
+            PropertyChanges {target: g; x: horiz_seg.xcoord_right}
+            PropertyChanges {target: g; width: 0}
+
+
         },
         State {
             name: "1"
-//            PropertyChanges {target: a; visible: false}
-//            PropertyChanges {target: b; visible: true}
-//            PropertyChanges {target: c; visible: true}
-//            PropertyChanges {target: d; visible: false}
-//            PropertyChanges {target: e; visible: false}
-//            PropertyChanges {target: f; visible: false}
-//            PropertyChanges {target: g; visible: false}
+            PropertyChanges {target: b; x: vert_seg.xcoord_right}
+            PropertyChanges {target: b; height: vert_seg.len}
+            PropertyChanges {target: c; x: vert_seg.xcoord_right}
+            PropertyChanges {target: c; height: vert_seg.len}
+
+            PropertyChanges {target: g; x: horiz_seg.xcoord_right}
+            PropertyChanges {target: g; width: 0}
+
+            // a,d shrink L -> R
+            PropertyChanges {target: a; x: horiz_seg.xcoord_right}
+            PropertyChanges {target: a; width: 0}
+            PropertyChanges {target: d; x: horiz_seg.xcoord_right}
+            PropertyChanges {target: d; width: 0}
+
+            // e, f, translate, go to length 0
+            PropertyChanges {target: e; x: horiz_seg.xcoord_right}
+            PropertyChanges {target: f; x: horiz_seg.xcoord_right}
         },
         State {
             name: "2"
-//            PropertyChanges {target: a; visible: true}
-//            PropertyChanges {target: b; visible: true}
-//            PropertyChanges {target: c; visible: false}
-//            PropertyChanges {target: d; visible: true}
-//            PropertyChanges {target: e; visible: true}
-//            PropertyChanges {target: f; visible: false}
-//            PropertyChanges {target: g; visible: true}
+            PropertyChanges {target: b; x: vert_seg.xcoord_right}
+            PropertyChanges {target: b; height: vert_seg.len}
+            PropertyChanges {target: f; x: vert_seg.xcoord_right}
+            PropertyChanges {target: f; height: vert_seg.len}
+
+            //a,d,g grows R -> L
+            PropertyChanges {target: a; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: a; width: horiz_seg.len}
+            PropertyChanges {target: d; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: d; width: horiz_seg.len}
+            PropertyChanges {target: g; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: g; width: horiz_seg.len}
+
+            // c, e translate R -> L
+            PropertyChanges {target: c; x: vert_seg.xcoord_left}
+            PropertyChanges {target: e; x: vert_seg.xcoord_left}
         },
         State {
             name: "3"
-//            PropertyChanges {target: a; visible: true}
-//            PropertyChanges {target: b; visible: true}
-//            PropertyChanges {target: c; visible: true}
-//            PropertyChanges {target: d; visible: true}
-//            PropertyChanges {target: e; visible: false}
-//            PropertyChanges {target: f; visible: false}
-//            PropertyChanges {target: g; visible: true}
+            PropertyChanges {target: a; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: a; width: horiz_seg.len}
+            PropertyChanges {target: b; x: vert_seg.xcoord_right}
+            PropertyChanges {target: b; height: vert_seg.len}
+            PropertyChanges {target: d; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: d; width: horiz_seg.len}
+            PropertyChanges {target: f; x: vert_seg.xcoord_right}
+            PropertyChanges {target: f; height: vert_seg.len}
+            PropertyChanges {target: g; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: g; width: horiz_seg.len}
+
+            PropertyChanges {target: c;  x: vert_seg.xcoord_right}
+            PropertyChanges {target: e;  x: vert_seg.xcoord_right}
         },
-        State {name: "4"},
-        State {name: "5"},
+        State {
+            name: "4"
+            PropertyChanges {target: b; x: vert_seg.xcoord_right}
+            PropertyChanges {target: b; height: vert_seg.len}
+            PropertyChanges {target: c; x: vert_seg.xcoord_right}
+            PropertyChanges {target: c; height: vert_seg.len}
+            PropertyChanges {target: e; x: vert_seg.xcoord_right}
+            PropertyChanges {target: e; height: vert_seg.len}
+            PropertyChanges {target: g; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: g; width: horiz_seg.len}
+
+            PropertyChanges {target: a;  x: horiz_seg.xcoord_left}
+            PropertyChanges {target: a;  width: 0}
+
+            //d shrinks R -> L
+            PropertyChanges {target: d;  x: horiz_seg.xcoord_right}
+            PropertyChanges {target: d;  width: 0}
+
+            //f grows Top -> Bottom
+            PropertyChanges {target: f; x: vert_seg.xcoord_left}
+            PropertyChanges {target: f;  height: vert_seg.len}
+
+        },
+        State {
+            name: "5"
+            PropertyChanges {target: c; x: vert_seg.xcoord_right}
+            PropertyChanges {target: c; height: vert_seg.len}
+            PropertyChanges {target: e; x: vert_seg.xcoord_right}
+            PropertyChanges {target: e; height: vert_seg.len}
+            PropertyChanges {target: f; x: vert_seg.xcoord_left}
+            PropertyChanges {target: f;  height: vert_seg.len}
+            PropertyChanges {target: g; x: horiz_seg.xcoord_left}
+            PropertyChanges {target: g; width: horiz_seg.len}
+
+            PropertyChanges {target: a;  x: horiz_seg.xcoord_left}
+            PropertyChanges {target: a;  width: horiz_seg.len}
+            PropertyChanges {target: d;  x: horiz_seg.xcoord_left}
+            PropertyChanges {target: d;  width: horiz_seg.len}
+
+            //b shrinks Bottom -> Top
+            PropertyChanges {target: b;  height: 0}
+        },
         State {name: "6"},
         State {name: "7"},
         State {name: "8"},
@@ -166,24 +247,19 @@ Item {
         Transition {
             from: "0"
             to: "1"
-            //HIDDEN: g
-            PropertyAnimation {target: g; property: "x"; to: horiz_seg.xcoord_right; duration: 0}
-            PropertyAnimation {target: g; property: "width"; to: 0; duration: 0}
-
             // a,d shrink L -> R
             PropertyAnimation {target: a; property: "x"; to: horiz_seg.xcoord_right; duration: anim_speed}
             PropertyAnimation {target: a; property: "width"; to: 0; duration: anim_speed}
             PropertyAnimation {target: d; property: "x"; to: horiz_seg.xcoord_right; duration: anim_speed}
             PropertyAnimation {target: d; property: "width"; to: 0; duration: anim_speed}
 
-            //e, f, translate, go to length 0
+            // e, f, translate, go to length 0
             PropertyAnimation {target: e; property: "x"; to: horiz_seg.xcoord_right; duration: anim_speed}
             PropertyAnimation {target: f; property: "x"; to: horiz_seg.xcoord_right; duration: anim_speed}
         },
         Transition {
             from: "1"
             to: "2"
-            //don't touch b or f
             //a,d,g grows R -> L
             PropertyAnimation {target: a; property: "x"; to: horiz_seg.xcoord_left; duration: anim_speed}
             PropertyAnimation {target: a; property: "width"; to: horiz_seg.len; duration: anim_speed}
